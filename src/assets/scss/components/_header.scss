@@ -1,0 +1,92 @@
+.header {
+  width: 100%;
+  height: 100%;
+  padding: 21px 0;
+  background-color: #212121;
+  position: relative;
+  .container {
+    .row {
+      justify-content: space-between;
+      .logo {
+        max-width: 250px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.2s ease-in-out;
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+      .navBar {
+        .navList {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .navItem {
+            text-transform: uppercase;
+            margin-right: 32px;
+            .a{
+              font-weight: 700;
+              font-size: 19px;
+              color: #fff;
+position: relative;
+              &::before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                bottom: 0;
+                width: 0;
+                opacity: 0;
+                height: 2px;
+                transition: ease-out all 0.3s;
+              }
+              &:hover {
+                &::before {
+                  width: 100%;
+                  background-color: white;
+                  bottom: 0;
+                  opacity: 1;
+                }
+              }
+            }
+            .dropdownMenu {
+              width: 100%;
+              height: auto;
+              position: absolute;
+              top: 121px;
+              left: 0;
+              background-color: green;
+              .row {
+                flex-wrap: wrap;
+                width: 75%;
+                justify-content: center;
+                align-items: center;
+                .shopDropdownList {
+                  max-width: 25%;
+                  flex: 0 0 25%;
+
+                  .shopDropdownItem {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .userArea {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        color: #fff;
+        .icon {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
