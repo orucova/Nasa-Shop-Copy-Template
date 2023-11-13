@@ -4,6 +4,7 @@
   padding: 21px 0;
   background-color: #212121;
   position: relative;
+  z-index: 99;
   .container {
     .row {
       justify-content: space-between;
@@ -29,11 +30,11 @@
           .navItem {
             text-transform: uppercase;
             margin-right: 32px;
-            .a{
+            .a {
               font-weight: 700;
               font-size: 19px;
               color: #fff;
-position: relative;
+              position: relative;
               &::before {
                 content: "";
                 position: absolute;
@@ -54,26 +55,55 @@ position: relative;
               }
             }
             .dropdownMenu {
+              opacity: 0;
+              visibility: hidden;
+              transition:  .25s ease-in-out;
               width: 100%;
               height: auto;
               position: absolute;
               top: 121px;
               left: 0;
-              background-color: green;
+              background-color: #fff;
               .row {
                 flex-wrap: wrap;
                 width: 75%;
                 justify-content: center;
-                align-items: center;
+                margin: 0 auto;
+                padding: 48px 0;
                 .shopDropdownList {
-                  max-width: 25%;
-                  flex: 0 0 25%;
-
-                  .shopDropdownItem {
+                  max-width: 20%;
+                  flex: 0 0 20%;
+                  a {
+                    .listTitle {
+                      margin-bottom: 16px;
+                      font-size: 13px;
+                      color: #212121;
+                    }
+                  }
+                  a {
+                    .shopDropdownItem {
+                      color: #212121;
+                      text-transform: capitalize;
+                      margin-bottom: 15px;
+                      transition: opacity .25s ease-in-out;
+                      &:hover{
+                        opacity: .7;
+                      }
+                    }
                   }
                 }
               }
             }
+          }
+          .shopHover{
+            &:hover{
+              .dropdownMenu{
+                opacity: 1;
+                visibility: visible;
+              }
+            }
+          }
+
           }
         }
       }
@@ -89,4 +119,4 @@ position: relative;
       }
     }
   }
-}
+

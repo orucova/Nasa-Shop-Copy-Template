@@ -1,0 +1,114 @@
+.footer {
+  width: 100%;
+  padding: 72px 0 50px;
+  background-color: rgb(23, 21, 21);
+  .container {
+    .footerContent {
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      text-transform: uppercase;
+      .footerContentFirst {
+        font-size: 13px;
+        margin-bottom: 16px;
+      }
+      .footerContentSecond {
+        font-size: 46px;
+        font-weight: 600;
+        margin: 24px 0 0;
+        font-family: "Oswald", sans-serif;
+      }
+    }
+    .footerNav {
+      width: 100%;
+      padding: 150px 0 50px;
+      color: #fff;
+      .row {
+        flex-wrap: wrap;
+        gap: 55px;
+        justify-content: space-between;
+        .footerList {
+          .listTitle {
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin: 0 0 20px;
+          }
+          .footerItem {
+            font-size: 15px;
+            margin: 0 0 15px;
+            a {
+              color: #fff;
+              transition: opacity 0.25s ease-in-out;
+              &:hover {
+                opacity: 0.7;
+              }
+            }
+          }
+          .footerMailItem {
+            font-size: 15px;
+            margin: 0 0 15px;
+            .footerMail {
+              color: #fff;
+              text-decoration: underline;
+              text-decoration-color: gray;
+              text-underline-offset: 2px;
+              transition: 0.2s ease-in-out;
+              &:hover {
+                color: #fff;
+                text-decoration-color: #fff;
+              }
+            }
+          }
+          .footerForm {
+            border: 1px solid ;
+            opacity: 0.7;
+            .inp {
+              width: 90%;
+              background-color: transparent;
+              padding: 10px 18px;
+              border: transparent;
+            }
+            .btn{
+                background-color: transparent;
+                border: transparent;
+                color: #fff;
+            }
+          }
+          .socialList{
+            display: flex;
+            flex-wrap: wrap;
+            .socialItem{
+              overflow: hidden;
+              position: relative;
+              padding: 15px;
+              font-size: 20px;
+              transform: translateZ(0);
+              border: 1px solid gray;
+              &::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: calc(100% + 1px);
+                height: calc(100% + 1px);
+                background-color: #fff;
+                transform: scaleY(0);
+                transition: transform .3s;
+              }
+              &:hover{
+                
+              }
+              a{
+                color: #fff;
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

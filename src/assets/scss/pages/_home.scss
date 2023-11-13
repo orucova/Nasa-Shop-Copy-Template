@@ -1,0 +1,59 @@
+main {
+  .hero {
+    width: 100%;
+    .heroContent {
+      position: relative;
+      .heroVideo {
+        width: 100%;
+        height: 500px;
+        .videoBg {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .heroInfo {
+        position: absolute;
+        top: 15%;
+        left: 35%;
+        .logo {
+          width: 50%;
+          font-size: 30px;
+          line-height: 40px;
+          margin-bottom: 40px;
+          img {
+            width: 100%;
+          }
+        }
+        .heroButton {
+            width: 100px;
+@include primaryBtn()
+        }
+      }
+    }
+  }
+  .tabSection{
+    width: 100%;
+    margin: 80px 0;
+    .container{
+.tabTitle{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #212121;
+  .tabSubtitle{
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+  }
+  .tabMainTitle{
+    font-size: 48px;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+  }
+}
+    }
+  }
+}

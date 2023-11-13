@@ -17,7 +17,7 @@ const Header = () => {
           </div>
           <nav className="navBar">
             <ul className="navList">
-              <li className="navItem">
+              <li className="navItem shopHover">
                 <NavLink className="a">
                 Shop
                    </NavLink>
