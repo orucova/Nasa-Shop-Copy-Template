@@ -1,0 +1,81 @@
+.loginPage{
+    .container{
+        .row{
+            align-items: center;
+            justify-content: center;
+            .login{
+                max-width: 850px;
+                text-align: center;
+                .loginTitles{
+                    margin: 38px 0;
+                    .loginTitle{
+                        font-size: 48px;
+                        margin: 48px 0 24px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        letter-spacing: -1;
+                        font-family: Oswald, sans-serif;
+                        color: #212121;
+                    }
+                }
+                .loginForm{
+                    display: flex;
+                    flex-direction: column;
+                    width: 460px;
+
+                    .p-password{
+                        width: 100%;
+                        i{
+                            top: 25%;
+                        }
+                        &~label{
+                            top: 25%;
+                        }
+                        &:focus{
+                            border: #212121 1px solid;
+                        }
+                        &:focus ~ label,:not(:placeholder-shown) ~ label{
+                            top: -5px; 
+                            font-size: 12px;
+                            background-color: #fff;
+                        }
+                    }
+                    .p-inputtext{
+                        width: 100%;
+                        border-radius: 2px;
+                        height: 52px;
+                        padding: 25px;
+                        margin-bottom: 18px;
+                        box-shadow: none;
+                        border: #dedede 1px solid;
+                          &~label{
+                            top: 25%;
+                        }
+                        &:focus{
+                            border: #212121 1px solid;
+                        }
+                        &:focus ~ label,:not(:placeholder-shown) ~ label{
+                            top: -5px; 
+                            font-size: 12px;
+                            background-color: #fff;
+                        }
+                    }
+                    .loginBtn{
+                        height: 52px;
+                        @include globalbtn()
+                    }
+                    .createAccountlink,.loginEndText{
+                        color: #212121B3;
+                        font-size: 15px;
+                        font-family:  Roboto, sans-serif;
+                        margin-top: 18px;
+                    }
+                    .createAccountlink{
+                     margin-left: 8px;
+                     text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 const Dropdown = () => {
   return (
     <div className="row">
-      <ul className="shopDropdownList">
+      <ul className="shopDropdownList" id="a">
         <NavLink to="/">
           <h5 className="listTitle">apparel</h5>
         </NavLink>
@@ -31,7 +31,7 @@ const Dropdown = () => {
           <li className="shopDropdownItem">Crew 6</li>
         </NavLink>
       </ul>
-      <ul className="shopDropdownList">
+      <ul className="shopDropdownList" id="b">
       <NavLink to="/">
           <h5 className="listTitle">toys</h5>
         </NavLink>
@@ -51,7 +51,7 @@ const Dropdown = () => {
           <li className="shopDropdownItem">Puzzles</li>
         </NavLink>
       </ul>
-      <ul className="shopDropdownList">
+      <ul className="shopDropdownList" id="c">
       <NavLink to="/">
           <h5 className="listTitle">collectibles</h5>
         </NavLink>
@@ -71,7 +71,7 @@ const Dropdown = () => {
           <li className="shopDropdownItem">Medallions</li>
         </NavLink>
       </ul>
-      <ul className="shopDropdownList">
+      <ul className="shopDropdownList" id="d">
       <NavLink to="/">
           <h5 className="listTitle">bookstore</h5>
         </NavLink>
@@ -86,7 +86,7 @@ const Dropdown = () => {
         </NavLink>
  
       </ul>
-      <ul className="shopDropdownList">
+      <ul className="shopDropdownList" id="e">
         <NavLink to="/">
           <h5 className="listTitle">novelties</h5>
         </NavLink>

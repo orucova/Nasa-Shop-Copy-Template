@@ -2,6 +2,7 @@
   width: 100%;
   padding: 72px 0 50px;
   background-color: rgb(23, 21, 21);
+  margin-top:100px ;
   .container {
     .footerContent {
       width: 100%;
@@ -98,9 +99,7 @@
                 transform: scaleY(0);
                 transition: transform .3s;
               }
-              &:hover{
-                
-              }
+
               a{
                 color: #fff;
 

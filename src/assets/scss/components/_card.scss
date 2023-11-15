@@ -1,0 +1,46 @@
+.card {
+    flex: 0 0 30%;
+    max-width: 30%;
+    .tabCard {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .cardImage {
+            width: 480px;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .cardTitle {
+
+            font-size: 15px;
+            margin-bottom: 5px;
+
+            a {
+                color: black;
+            }
+        }
+
+        .cardPrice {
+            color: black;
+            margin: 10px 0;
+        }
+
+        .onSale {
+            color: #212121B3;
+            margin: 8px 0;
+            display: inline-block;
+        }
+        .addBtn{
+            @include globalbtn()
+        }
+    }
+}

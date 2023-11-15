@@ -1,0 +1,52 @@
+.p-tabview-nav-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  
+    .p-tabview-nav-content {
+      display: flex;
+      justify-content: center;
+      width: 57%;
+  
+      .p-tabview-nav {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+  
+  
+  
+  .p-tabview-panels {
+    margin-top: 40px;
+  }
+  
+  .p-unselectable-text {
+    .p-tabview-nav-link {
+      border: none;
+      color: #212121c2;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 13px;
+      font-weight: 400;
+      border-radius: 2px;
+      .p-tabview-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+    }
+  }
+  
+  .p-tabview-selected,
+  .p-highlight {
+    .p-tabview-nav-link {
+      background-color: #ED293D;
+      color: #fff;
+    }
+  }
+  
+  .p-tabview-ink-bar {
+    background-color: #ED293D;
+    color: #fff;
+  }

@@ -1,6 +1,8 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import HeroLogo from "../assets/images/hero-logo_1.webp";
 import videoBg from "../assets/images/videoBg.mp4";
+import { Tabs } from "../components/Tabs";
+
 const Home = () => {
   return (
     <main>
@@ -31,24 +33,7 @@ const Home = () => {
             <p className="tabSubtitle">explore our</p>
             <h2 className="tabMainTitle">featured items</h2>
           </div>
-          <div className="cardBox">
-          <div className="row">
-            <div className="tabCard">
-              <div className="cardImage">
-                <img src="" alt="" />
-              </div>
-              <div className="cardTitle">
-                <Link>NASA's SpaceX_CRS-29 Unisex t-shirt</Link>
-              </div>
-              <p className="cardPrice">Sale priceFrom $24.95 USD</p>
-              <span className="onSale">6 colors available</span>
-              <div className="cardButton">
-                <NavLink>quick view</NavLink>
-              </div>
-            </div>
-          </div>
-            
-          </div>
+          <Tabs />
         </div>
       </section>
     </main>

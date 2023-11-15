@@ -1,59 +1,91 @@
 main {
+  width: 100%;
+
   .hero {
     width: 100%;
+    position: relative;
+    z-index: 1;
+    top: -122px;
+
     .heroContent {
-      position: relative;
+      width: 100%;
+
       .heroVideo {
+        height: 582px;
         width: 100%;
-        height: 500px;
+
         .videoBg {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       .heroInfo {
         position: absolute;
-        top: 15%;
-        left: 35%;
+        top: 32%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
         .logo {
-          width: 50%;
+          width: 60%;
           font-size: 30px;
           line-height: 40px;
           margin-bottom: 40px;
+
           img {
             width: 100%;
           }
         }
+
         .heroButton {
-            width: 100px;
-@include primaryBtn()
+          width: 100px;
+          display: flex;
+          justify-content: center;
+          @include primaryBtn()
         }
       }
     }
   }
-  .tabSection{
+
+  .tabSection {
     width: 100%;
-    margin: 80px 0;
-    .container{
-.tabTitle{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  color: #212121;
-  .tabSubtitle{
-    font-size: 13px;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin: 0 0 16px;
-  }
-  .tabMainTitle{
-    font-size: 48px;
-    font-family: "Oswald", sans-serif;
-    text-transform: uppercase;
-  }
-}
+    .container {
+      .tabTitle {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        color: #212121;
+
+        .tabSubtitle {
+          font-size: 13px;
+          font-weight: 500;
+          text-transform: uppercase;
+          margin: 0 0 16px;
+        }
+
+        .tabMainTitle {
+          font-size: 48px;
+          font-family: "Oswald", sans-serif;
+          text-transform: uppercase;
+          margin-bottom: 40px;
+        }
+      }
+
+      .cardBox {
+        .row {
+          flex-wrap: wrap;
+          gap: 40px;
+          justify-content: center;
+        }
+      }
     }
   }
 }
