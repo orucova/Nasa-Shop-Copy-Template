@@ -1,5 +1,5 @@
 import { Card } from "../components/Card";
-import data from "../data.json";
+import data from "../db/data.json";
 import { TabView, TabPanel } from "primereact/tabview";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 

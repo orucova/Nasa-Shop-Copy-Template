@@ -9,6 +9,9 @@ main {
 
     .heroContent {
       width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       .heroVideo {
         height: 582px;
@@ -21,9 +24,6 @@ main {
         }
       }
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
 
       .heroInfo {
         position: absolute;
@@ -48,7 +48,7 @@ main {
           width: 100px;
           display: flex;
           justify-content: center;
-          @include primaryBtn()
+          @include primaryBtn();
         }
       }
     }
@@ -84,6 +84,61 @@ main {
           flex-wrap: wrap;
           gap: 40px;
           justify-content: center;
+        }
+      }
+    }
+  }
+  .videoSection {
+    width: 100%;
+    margin: 90px 0;
+    position: relative;
+    .videoSectionContent{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .video {
+        width: 100%;
+        height: calc(100vh - 165px);
+        video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .videoContent{
+        position: absolute;
+        top: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .videoTitle{
+          line-height: 60px;
+          color: white;
+          font-size: 42px;
+          margin: 28px 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        .videoButton{
+          @include primaryBtn();
+        }
+      }
+    }
+  }
+  .latestSection{
+    .container{
+      .sectionTitle{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        color: #212121;
+        .title{
+          font-size: 48px;
+          font-family: "Oswald", sans-serif;
+          text-transform: uppercase;
+          margin-bottom: 40px;
         }
       }
     }

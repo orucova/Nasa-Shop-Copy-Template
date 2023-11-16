@@ -22,12 +22,10 @@ const Login = () => {
                   type="email"
                   onChange={(e) => setValue(e.target.value)}
                 />
-
-
                 <label htmlFor="username">E-mail</label>
               </span>
               <span className="p-float-label">
-              <Password value={value} onChange={(e) => setValue(e.target.value)} feedback={false} tabIndex={1} toggleMask />
+              <Password  onChange={(e) => setValue(e.target.value)} feedback={false} tabIndex={1} toggleMask />
                 <label htmlFor="username">Password</label>
               </span>
               <button className="loginBtn">LOGIN</button>

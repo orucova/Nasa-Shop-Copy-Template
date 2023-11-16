@@ -1,0 +1,45 @@
+ [
+    {
+      "id": 1,
+      "img":"nasashop-1",
+      "title": "NASA's SpaceX_CRS-29 Unisex t-shirt",
+      "color": "6 colors available",
+      "price":24.95 
+    },
+    {
+        "id": 2,
+        "img":"nasashop-2",
+        "title": "NASA's SpaceX CRS-29 Unisex Hoodie",
+        "color": "0 colors available",
+        "price":39.95
+      },
+      {
+        "id": 3,
+        "img":"nasashop-3",
+        "title": "NASA's SpaceX CR-25 3/4 sleeve raglan shirt",
+        "color": "4 colors available",
+        "price":26.95
+      },
+      {
+        "id": 4,
+        "img":"nasashop-4",
+        "title": "NASA's SpaceX CRS-25 Unisex T-Shirt",
+        "color": "3 colors available",
+        "price":21.95
+      },
+      {
+        "id": 5,
+        "img":"images/nasashop-5",
+        "title": "NASA's SpaceX CRS-25 Decal",
+        "color": "0 colors available",
+        "price":2.95
+      },
+      {
+        "id": 6,
+        "img":"nasashop-6",
+        "title": "NASA’s SpaceX CRS-23 Unisex T-Shirt",
+        "color": "2 colors available",
+        "price":19.95
+      }
+  ]
+

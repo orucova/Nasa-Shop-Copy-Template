@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import HeroLogo from "../assets/images/hero-logo_1.webp";
 import videoBg from "../assets/images/videoBg.mp4";
 import { Tabs } from "../components/Tabs";
+import sectionVideo from "../assets/images/sectionVideo.mp4";
 
 const Home = () => {
   return (
@@ -34,6 +35,26 @@ const Home = () => {
             <h2 className="tabMainTitle">featured items</h2>
           </div>
           <Tabs />
+        </div>
+      </section>
+      <section className="videoSection">
+        <div className="videoSectionContent">
+          <div className="video">
+            <video src={sectionVideo} autoPlay muted loop></video>
+          </div>
+          <div className="videoContent">
+            <h2 className="videoTitle">EXPAND YOUR HORIZONS AND TAKE HOME A PIECE OF THE GALAXY.</h2>
+            <div className="videoButton">
+              <Link className="btn">Learn more</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="latestSection">
+        <div className="container">
+          <div className="sectionTitle">
+            <h2 className="title">the latest</h2>
+          </div>
         </div>
       </section>
     </main>
