@@ -1,0 +1,84 @@
+.latestCardBox {
+    width: 100%;
+  
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  
+      .latestCard {
+        max-width: 32%;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 25px;
+  
+        &:hover {
+          .cardImg::before {
+            background-color: black; 
+          }
+        }
+  
+        a {
+          .cardImg {
+            position: relative; 
+            width: 100%;
+            transition: transform 0.5s ease;
+  
+            img {
+              object-fit: cover;
+              width: 100%;
+            }
+  
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-color: transparent; 
+              transition: background-color 0.5s ease;
+            }
+  
+            &:hover {
+              transform: scale(1.03);
+            }
+          }
+  
+          .cardInfo {
+            position: absolute;
+            z-index: 5;
+            top: 30%;
+            left: 15%;
+            color: #fff;
+            text-align: center;
+  
+            .cardSubtitle {
+              font-size: 13px;
+              font-weight: 600;
+              text-transform: uppercase;
+              font-family: "Roboto", sans-serif;
+              margin-bottom: 16px;
+            }
+  
+            .cardTitle {
+              font-size: 30px;
+              font-family: "Oswald", sans-serif;
+              text-transform: uppercase;
+              margin: 24px 0;
+            }
+  
+            .button {
+              @include globalbtn();
+              background-color: #fff;
+              width: auto !important;
+              .btn {
+                color: red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

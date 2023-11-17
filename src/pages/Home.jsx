@@ -3,6 +3,7 @@ import HeroLogo from "../assets/images/hero-logo_1.webp";
 import videoBg from "../assets/images/videoBg.mp4";
 import { Tabs } from "../components/Tabs";
 import sectionVideo from "../assets/images/sectionVideo.mp4";
+import LatestCard from "../components/LatestCard";
 
 const Home = () => {
   return (
@@ -55,6 +56,7 @@ const Home = () => {
           <div className="sectionTitle">
             <h2 className="title">the latest</h2>
           </div>
+          <LatestCard/>
         </div>
       </section>
     </main>
