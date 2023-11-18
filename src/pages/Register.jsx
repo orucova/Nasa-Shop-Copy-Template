@@ -1,30 +1,38 @@
-
 import { Link } from "react-router-dom";
 import { InputComponent } from "../components/InputComponent";
-const Login = () => {
+
+const Register = () => {
   return (
     <section className="loginPage">
       <div className="container">
         <div className="row">
           <div className="login">
             <div className="loginTitles">
-              <h2 className="loginTitle">LOGIN</h2>
-              <p className="loginText">
-                Please enter your e-mail and password:
-              </p>
+              <h2 className="loginTitle">REGISTER</h2>
+              <p className="loginText">Please fill in the fields below:</p>
             </div>
             <form className="loginForm">
+              <InputComponent
+                type={"firstName"}
+                id={"firstName"}
+                name={"First Name"}
+              />
+              <InputComponent
+                type={"lastName"}
+                id={"lastName"}
+                name={"Last Name"}
+              />
               <InputComponent type={"email"} id={"email"} name={"E-mail"} />
               <InputComponent
                 type={"password"}
                 id={"password"}
                 name={"Password"}
               />
-              <button className="loginBtn">LOGIN</button>
+              <button className="loginBtn">Create Account</button>
               <span className="loginEndText">
-                New customer?
-                <Link className="createAccountlink" to="/create-account">
-                  Create an account
+                Already have an account?
+                <Link className="createAccountlink" to="/login">
+                  Login
                 </Link>
               </span>
             </form>
@@ -35,4 +43,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

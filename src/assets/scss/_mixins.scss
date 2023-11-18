@@ -13,14 +13,22 @@
         font-weight: 800;
         text-transform: uppercase;
     }
+
+    //     &:hover{
+    //         background-color: #ed293d;
+    //         border-color: #ed293d;
+    //         a{
+    //             color: #fff;
+    //         }
+    // }
 }
 
-@mixin globalbtn(){
+@mixin globalbtn($bgColor:#175EB1){
     border: none;
-    line-height: 1;
+    // line-height: 1;
     padding: 15px 35px;
     margin: 16px 0 0;
-    background-color: #175EB1;
+    background-color: $bgColor;
     color: #fff;
     transition: 0.25s;
     text-transform: uppercase;
@@ -29,3 +37,6 @@
         box-shadow: inset 0 -4.25em 0 0 #08080625;
     }
 }
+
+
+

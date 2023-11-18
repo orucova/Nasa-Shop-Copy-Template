@@ -1,0 +1,184 @@
+.product-detail {
+    width: 100%;
+    margin-top: 50px;
+    .container {
+        width: 85%;
+        .row {
+            justify-content: space-between;
+            .productLeft {
+                width: 45%;
+                height: 100%;
+                img {
+                    width: 100%;
+                }
+            }
+            .productRight {
+                margin-left: 74px;
+                width: 49%;
+                .productTitle {
+                    font-family: 'Oswald', sans-serif;
+                    font-size: 36px;
+                    margin-bottom: 24px;
+                    color: #212121;
+                    text-transform: uppercase;
+                }
+                .productPrice {
+                    font-size: 22px;
+                    font-family: 'Roboto', sans-serif;
+                    color: #212121;
+                }
+                .stars {
+                    margin: 20px 0;
+                    display: flex;
+                    justify-content: space-between;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid #eeeeee;
+                    .starIcons {
+                        display: flex;
+                        .iconStar {
+                            color: #fbdba9;
+                            font-size: 14px;
+                            margin-right: 3px;
+                        }
+                        .noReviews {
+                            font-family: 'Roboto', sans-serif;
+                            font-size: 15px;
+                            color: #212121;
+                            margin-left: 8px;
+                            width: 74px;
+                            position: relative;
+                            cursor: pointer;
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                height: 100%;
+                                bottom: 0;
+                                width: 0;
+                                opacity: 0;
+                                height: 1px;
+                                transition: ease-out all 0.5s;
+                            }
+                            &:hover {
+                                &::before {
+                                    width: 100%;
+                                    background-color: #212121;
+                                    bottom: 0;
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                    .sku {
+                        font-family: 'Roboto', sans-serif;
+                        font-size: 11px;
+                        color: #212121B3;
+                    }
+                }
+                .size {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    .p-multiselect {
+                        box-shadow: none;
+                        width: 100%;
+                        border-radius: 2px;
+                        height: 45px;
+                        padding: 0 20px;
+                        border: 1px solid #eeeeee;
+                        margin-top: 8px;
+                        &:hover {
+                            border: 1px solid #eeeeee;
+                        }
+                        &:focus {
+                            border: 1px solid #eeeeee;
+                        }
+                        .p-multiselect-label-container {
+                            .p-multiselect-label {
+                                padding: 14px 0;
+                            }
+                        }
+                    }
+                }
+                .quatity {
+                    margin-bottom: 15px;
+                    .quantityTitle {
+                        margin-bottom: 8px;
+                        font-size: 15px;
+                        color: #212121;
+                    }
+                    .productBtns {
+                        width: 138px;
+                        height: 100%;
+                        display: flex;
+                        border: 1px solid #eeeeee;
+                        height: 46px;
+                        .btncon {
+                            border: none;
+                            outline: none;
+                            width: 46px;
+                            background-color: #fff;
+                            color: #212121;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 12px;
+                            cursor: pointer;
+                        }
+                        .counterResult {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .addToCart {
+                    width: 100%;
+                    @include globalbtn(#ED293D)
+                }
+                .share {
+                    display: flex;
+                    margin-top: 30px;
+                    .shareTitle {
+                        color: #636363;
+                        font-size: 15px;
+                        margin-right: 20px;
+                    }
+                    .shareIcons {
+                        display: flex;
+                        gap: 18px;
+                        .shareIcon {
+                            color: #636363;
+                            font-size: 14px;
+                            transition: .5s ease all;
+                            cursor: pointer;
+                            &:hover {
+                                color: #212121;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.p-multiselect-panel {
+    .p-multiselect-header {
+        display: none;
+    }
+    .p-multiselect-items-wrapper {
+        border-radius: 2px;
+        border-top: none;
+        border: 1px solid #eeeeee;
+        &::-webkit-scrollbar {
+            background-color: transparent;
+        }
+        .p-multiselect-items {
+            .p-multiselect-item {
+                padding: 8px 18px;
+                height: 42px;
+                .p-checkbox {
+                    display: none;
+                }
+            }
+        }
+    }
+}

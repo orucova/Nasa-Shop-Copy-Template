@@ -5,6 +5,7 @@ import img from "../assets/images/nasashop-1.webp"
 export const Card = ({price,title,color}) => {
   return (
     <div className="card">
+      <Link to="/product-detail" className="cardLink"> 
       <div className="tabCard">
         <div className="cardImage">
           <img
@@ -21,6 +22,7 @@ export const Card = ({price,title,color}) => {
             quick view
           </Link>
       </div>
+      </Link>
     </div>
   );
 };
