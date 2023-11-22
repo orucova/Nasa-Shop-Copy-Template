@@ -66,7 +66,7 @@ const Cart = ({ open, setOpen }) => {
               <p className="textOne">Add order note</p>
               <p className="textTwo">Shipping & taxes calculated at checkout</p>
             </div>
-            <button className="cartCheckoutBtn">
+            <button  className="cartCheckoutBtn" onClick={()=> window.location.href = "http://localhost:3000/checkout"}>
               Checkout <span className="square-separator"></span> $21.21 USD
             </button>
           </div>
