@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaPinterestP } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
@@ -7,31 +7,45 @@ import { IoIosStar } from "react-icons/io";
 import { MultiSelect } from "primereact/multiselect";
 import { TiMinus } from "react-icons/ti";
 import { FaPlus } from "react-icons/fa6";
-import foto from "../assets/images/nasashop-1.webp";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const ProductDetail = () => {
   const [selectedCities, setSelectedCities] = useState(null);
-  const cities = [
-    { name: "S", code: "S" },
-    { name: "M", code: "M" },
-    { name: "L", code: "L" },
-    { name: "XL", code: "XL" },
-    { name: "XL", code: "2XL" },
-    { name: "3XL", code: "3XL" },
-    { name: "4XL", code: "4XL" },
-  ];
+  const [product,setProduct]=useState({})
+ const {id}=useParams()
+ 
+
+
+useEffect(()=>{
+  singlProduct()
+  window.scrollTo(0,0)
+},[id])
+
+const singlProduct=async()=>{
+  await axios
+  .get(`http://localhost:4000/nasa-api/products/${id}`)
+  .then((res)=>{
+    setProduct(res.data)
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+}
+
+
   return (
     <section className="product-detail">
       <div className="container">
         <div className="row">
           <div className="productLeft">
-            <img src={foto} alt="" />
+            <img src={`http://localhost:4000/${product.productImg}`} alt="" />
           </div>
           <div className="productRight">
             <h2 className="productTitle">
-              NASA'S SPACEX_CRS-29 UNISEX T-SHIRT
+              {product.productTitle}
             </h2>
-            <p className="productPrice">$24.95 USD</p>
+            <p className="productPrice">${product.price} USD</p>
             <div className="stars">
               <div className="starIcons">
                 <IoIosStar className="iconStar" />
@@ -48,10 +62,10 @@ const ProductDetail = () => {
               <MultiSelect
                 value={selectedCities}
                 onChange={(e) => setSelectedCities(e.value)}
-                options={cities}
+                options={product.size}
                 optionLabel="name"
                 placeholder="S"
-                maxSelectedLabels={7}
+                maxSelectedLabels={8}
                 className="w-full md:w-20rem"
               />
             </div>

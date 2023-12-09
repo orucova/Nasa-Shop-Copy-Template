@@ -1,26 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import img from "../assets/images/nasashop-1.webp"
 
-export const Card = ({price,title,color}) => {
+
+export const Card = ({item}) => {
   return (
-    <div className="card">
-      <Link to="/product-detail" className="cardLink"> 
+    <div className="card" >
+      <Link to={`/product-detail/${item.id}`} className="cardLink"> 
       <div className="tabCard">
         <div className="cardImage">
           <img
-            src={img}
-            alt={img}
+            src={`http://localhost:4000/${item.productImg}`}
+            alt={item.productImg}
           />
         </div>
         <div className="cardTitle">
-          <Link>{title}</Link>
+          <p>{item.productTitle}</p>
         </div>
-        <p className="cardPrice">From ${price} USD</p>
-        <span className="onSale">{color}</span>
-          <Link className="addBtn" role="button">
+        <p className="cardPrice">From ${item.price} USD</p>
+        <span className="onSale">{item.color}</span>
+          <button className="addBtn" role="button">
             quick view
-          </Link>
+          </button>
       </div>
       </Link>
     </div>
