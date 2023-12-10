@@ -5,15 +5,18 @@ import foto from "../assets/images/nasashop-1.webp";
 import { MdDiscount } from "react-icons/md";
 import { TiMinus } from "react-icons/ti";
 import { FaPlus } from "react-icons/fa6";
-import { decrement, increment } from "../redux/slice/cartSlice";
+import { decrement, increment,cartDecrement,cartIncrement,removeFromCart } from "../redux/slice/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 
 const Cart = ({ open, setOpen }) => {
 
+  
+
   const dispatch=useDispatch()
-  const count=useSelector((state)=>state.cartData.counter)
+  const count=useSelector((state)=>state.cartData.cartCount)
   const cart=useSelector((state)=>state.cartData.cart)
+
 
   return (
     <>
@@ -54,14 +57,14 @@ const Cart = ({ open, setOpen }) => {
                    <div className="productConter">
                      <div className="productBtns">
                        <button className="decrement btncon">
-                         <TiMinus onClick={()=>dispatch(decrement())}/>
+                         <TiMinus onClick={()=>dispatch(cartDecrement())}/>
                        </button>
                        <span className="counterResult btncon">{count}</span>
                        <button className="increment btncon">
-                         <FaPlus onClick={()=>dispatch(increment())} />
+                         <FaPlus onClick={()=>dispatch(cartIncrement())} />
                        </button>
                      </div>
-                     <p className="remove">Remove</p>
+                     <p className="remove" onClick={()=>dispatch(removeFromCart())}>Remove</p>
                    </div>
                  </div>
                  <div className="productPrice">
