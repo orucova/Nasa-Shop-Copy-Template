@@ -9,6 +9,10 @@ import { TiMinus } from "react-icons/ti";
 import { FaPlus } from "react-icons/fa6";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { decrement, increment,addToCart } from "../redux/slice/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+
+
 
 const ProductDetail = () => {
   const [selectedCities, setSelectedCities] = useState(null);
@@ -24,7 +28,7 @@ useEffect(()=>{
 
 const singlProduct=async()=>{
   await axios
-  .get(`http://localhost:4000/nasa-api/products/${id}`)
+  .get(`http://localhost:4000/api/v1/shop-nasa/${id}`)
   .then((res)=>{
     setProduct(res.data)
   })
@@ -33,17 +37,23 @@ const singlProduct=async()=>{
   })
 }
 
+// Redux
+const dispatch=useDispatch()
+const count = useSelector((state)=>state.cartData.counter)
+const cart=useSelector((state)=>state.cartData.cart)
+
+
 
   return (
     <section className="product-detail">
       <div className="container">
         <div className="row">
           <div className="productLeft">
-            <img src={`http://localhost:4000/${product.productImg}`} alt="" />
+            <img src={`http://localhost:4000/${product.productImage}`} alt={product.productImage} />
           </div>
           <div className="productRight">
             <h2 className="productTitle">
-              {product.productTitle}
+              {product.name}
             </h2>
             <p className="productPrice">${product.price} USD</p>
             <div className="stars">
@@ -73,15 +83,16 @@ const singlProduct=async()=>{
               <p className="quantityTitle">Quantity:</p>
               <div className="productBtns">
                 <button className="decrement btncon">
-                  <TiMinus />
+                  <TiMinus onClick={()=>dispatch(decrement())} />
                 </button>
-                <span className="counterResult btncon">1</span>
+                <span className="counterResult btncon">{count}</span>
                 <button className="increment btncon">
-                  <FaPlus />
+                  <FaPlus onClick={()=>dispatch(increment())}/>
                 </button>
               </div>
             </div>
-            <button className="addToCart">ADD TO CART</button>
+            <button className="addToCart" onClick={()=>{dispatch(addToCart(product))
+            console.log(cart)}}>ADD TO CART</button>
             <div className="share">
               <p className="shareTitle">Share</p>
               <span className="shareIcons">

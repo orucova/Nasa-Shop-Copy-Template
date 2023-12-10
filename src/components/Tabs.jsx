@@ -10,7 +10,7 @@ export const Tabs = () => {
   useEffect(() => {
     const getProducts = async () => {
       await axios
-        .get("http://localhost:4000/nasa-api/products")
+        .get("http://localhost:4000/api/v1/shop-nasa")
         .then((res) => {
           setProducts(res.data);
         })

@@ -5,7 +5,16 @@ import foto from "../assets/images/nasashop-1.webp";
 import { MdDiscount } from "react-icons/md";
 import { TiMinus } from "react-icons/ti";
 import { FaPlus } from "react-icons/fa6";
+import { decrement, increment } from "../redux/slice/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+
+
 const Cart = ({ open, setOpen }) => {
+
+  const dispatch=useDispatch()
+  const count=useSelector((state)=>state.cartData.counter)
+  const cart=useSelector((state)=>state.cartData.cart)
+
   return (
     <>
       <div
@@ -25,41 +34,44 @@ const Cart = ({ open, setOpen }) => {
               <button className="cartBtn">Start Shopping</button>
             </div> */}
           <div className="cartBody">
-            <div className="cartProduct">
-              <img src={foto} alt="" />
-              <div className="productContent">
-                <div className="productCont">
-                  <h3 className="cartProductTitle">
-                    NASA's SpaceX_CRS-29 Unisex t-shirt
-                  </h3>
-                  <p className="productSize">Heather True Royal / S</p>
-                  <div className="sale">
-                    <span className="discountIcon">
-                      <MdDiscount className="icon" />
-                    </span>
-                    <p className="saleText">
-                      Holiday/Cyber Monday 15% off sale (-$3.74)
-                    </p>
-                  </div>
-                  <div className="productConter">
-                    <div className="productBtns">
-                      <button className="decrement btncon">
-                        <TiMinus />
-                      </button>
-                      <span className="counterResult btncon">1</span>
-                      <button className="increment btncon">
-                        <FaPlus />
-                      </button>
-                    </div>
-                    <p className="remove">Remove</p>
-                  </div>
-                </div>
-                <div className="productPrice">
-                  <span className="newPrice">$11.51</span>
-                  <span className="oldPrice">$21.21</span>
-                </div>
-              </div>
-            </div>
+            {cart.map(item=>
+               <div className="cartProduct">
+               <img  src={`http://localhost:4000/${item.productImage}`} alt={item.productImage} />
+               <div className="productContent">
+                 <div className="productCont">
+                   <h3 className="cartProductTitle">
+                     {item.name}
+                   </h3>
+                   <p className="productSize">Heather True Royal / S</p>
+                   <div className="sale">
+                     <span className="discountIcon">
+                       <MdDiscount className="icon" />
+                     </span>
+                     <p className="saleText">
+                       Holiday/Cyber Monday 15% off sale (-$3.74)
+                     </p>
+                   </div>
+                   <div className="productConter">
+                     <div className="productBtns">
+                       <button className="decrement btncon">
+                         <TiMinus onClick={()=>dispatch(decrement())}/>
+                       </button>
+                       <span className="counterResult btncon">{count}</span>
+                       <button className="increment btncon">
+                         <FaPlus onClick={()=>dispatch(increment())} />
+                       </button>
+                     </div>
+                     <p className="remove">Remove</p>
+                   </div>
+                 </div>
+                 <div className="productPrice">
+                   <span className="newPrice">${item.price}</span>
+                   <span className="oldPrice">$21.21</span>
+                 </div>
+               </div>
+             </div>
+              )}
+           
           </div>
           <div className="cartFooter">
             <div className="cartFooterText">

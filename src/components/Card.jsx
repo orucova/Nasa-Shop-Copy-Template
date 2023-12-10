@@ -9,12 +9,12 @@ export const Card = ({item}) => {
       <div className="tabCard">
         <div className="cardImage">
           <img
-            src={`http://localhost:4000/${item.productImg}`}
-            alt={item.productImg}
+            src={`http://localhost:4000/${item.productImage}`}
+            alt={item.productImage}
           />
         </div>
         <div className="cardTitle">
-          <p>{item.productTitle}</p>
+          <p>{item.name}</p>
         </div>
         <p className="cardPrice">From ${item.price} USD</p>
         <span className="onSale">{item.color}</span>

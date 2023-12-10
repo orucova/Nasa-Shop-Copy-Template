@@ -11,9 +11,13 @@ import Checkout from "./pages/Checkout";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+// Redux
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+
 const App = () => {
   return (
-    <>
+    <Provider store={store}>
       <Header />
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -23,7 +27,7 @@ const App = () => {
         <Route path="/checkout" element={<Checkout/>}/>
       </Routes>
       <Footer />
-    </>
+    </Provider>
   );
 };
 
