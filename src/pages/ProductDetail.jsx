@@ -9,7 +9,7 @@ import { TiMinus } from "react-icons/ti";
 import { FaPlus } from "react-icons/fa6";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { addToCart } from "../redux/slice/cartSlice";
+import { addToCart,cartTotalPrice } from "../redux/slice/cartSlice";
 import { useDispatch } from "react-redux";
 
 const ProductDetail = () => {
@@ -103,6 +103,7 @@ const ProductDetail = () => {
               className="addToCart"
               onClick={() => {
                 dispatch(addToCart(product));
+                dispatch(cartTotalPrice(product))
                 setProduct({ ...product, quantity: 1 });
               }}
             >
