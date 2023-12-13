@@ -4,7 +4,7 @@
   position: relative;
   z-index: 99;
   transition: ease-out all 0.3s;
-  
+
   // background-color: transparent;
   background-color: #212121;
   // &:hover {
@@ -185,4 +185,7 @@
       }
     }
   }
+}
+.noneHeader{
+  display: none;
 }

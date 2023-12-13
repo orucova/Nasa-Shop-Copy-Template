@@ -6,7 +6,6 @@ const Drawer = ({ open, setOpen }) => {
   useEffect(() => {
     setOpen(false);
   }, [setOpen]);
-console.log(open)
   return (
     <>
     <div className={`overlay ${open && "active"}`} onClick={() => setOpen(false)} ></div>

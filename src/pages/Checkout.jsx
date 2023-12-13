@@ -4,9 +4,12 @@ import { RiShoppingBag2Line } from "react-icons/ri";
 import image from "../assets/images/nasashop-1.webp";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Cart from "../components/Cart";
 const Checkout = () => {
   const [countries, setCountries] = useState([])
-
+  const [openCart, setOpenCart] = useState(false);
+  
   useEffect(()=>{
     getCountries()
   })
@@ -19,17 +22,21 @@ const Checkout = () => {
       console.log(error)
     }
   }
+
+  // const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cartData.cart);
+  const totalPrice=cart.reduce((total,item)=>total+item.price*item.quantity,0)
   return (
     <section className="checkoutSection">
       <div className="checkoutHeader">
         <div className="container">
           <div className="row">
             <div className="logoSide">
-              <img src={logo} alt="" />
+              <Link to="/"><img src={logo} alt="" /></Link>
             </div>
             <div className="cartSide">
               <span className="cartIcon">
-                <RiShoppingBag2Line />
+                <RiShoppingBag2Line onClick={() => setOpenCart(!openCart)}/>
               </span>
             </div>
           </div>
@@ -71,23 +78,30 @@ const Checkout = () => {
               </form>
             </div>
             <div className="rightSide">
-              <div className="row">
-                <div className="productImage">
-                  <img className="img" src={image} alt="" />
+              {
+                cart.map((item)=>(
+                  <div className="row">
+                  <div className="productImage">
+                    <img className="img" src={`http://localhost:4000/${item?.productImage}`} alt="" />
+                  </div>
+                  <div className="productInfo">
+                      <p className="productName">{item.name}</p>
+                      <p className="productSize">Black/S</p>
+                      <p className="productSale">HOLIDAY/CYBER MONDAY 15% OFF SALE</p>
+                  </div>
+                  <div className="productPrice">
+                      <p className="price">Price: ${item.price}</p>
+                      <p className="price">Total Price: ${item.price * item.quantity}</p>
+                  </div>
                 </div>
-                <div className="productInfo">
-                    <p className="productName">NASA’s SpaceX CRS-22 Unisex T-Shirt</p>
-                    <p className="productSize">Black/S</p>
-                    <p className="productSale">HOLIDAY/CYBER MONDAY 15% OFF SALE</p>
-                </div>
-                <div className="productPrice">
-                    <p className="price">$16.96</p>
-                </div>
-              </div>
+                ))
+              }
+              <p>Total: {totalPrice.toFixed(2)}</p>
             </div>
           </div>
         </div>
       </div>
+      <Cart open={openCart} setOpen={setOpenCart} />
     </section>
   );
 };

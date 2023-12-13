@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import logo from "../assets/images/logo.webp";
 //Icons
 import { FiSearch } from "react-icons/fi";
@@ -6,15 +6,30 @@ import { GiAstronautHelmet } from "react-icons/gi";
 import { RiShoppingBag2Line } from "react-icons/ri";
 import Dropdown from "./Dropdown";
 import Drawer from "./Drawer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Cart from "./Cart";
 
 const Header = () => {
+
   const [drawer, setDrawer] = useState(false);
   const [openCart, setOpenCart] = useState(false);
+const  [headerClassName,setHeaderClassName]=useState("header")
+
+//? Router
+const path = useLocation();
+
+      useEffect(()=>{
+        if(path.pathname === "/checkout"){
+          setHeaderClassName("noneHeader");
+        }
+        else{
+          setHeaderClassName("header");
+        }
+      },[path.pathname])
+  
   return (
     <>
-      <header className="header">
+      <header className={headerClassName}>
         <div className="container">
           <div className="row">
             <div className="logo">

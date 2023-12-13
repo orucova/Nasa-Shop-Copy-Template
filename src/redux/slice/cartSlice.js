@@ -6,6 +6,17 @@ const initialState = {
   cartTotalPrice:0,
 };
 
+//? Check saved cart from localStorage
+const checkSavedCart = () => {
+  const saved = JSON.parse(localStorage.getItem("cart"));
+  if (saved !== null) {
+    initialState.cart = saved;
+  } else {
+    initialState.cart = [];
+  }
+};
+checkSavedCart();
+
 const cartSlice = createSlice({
   name: "cartData",
   initialState,
