@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-redundant-roles */
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -14,7 +15,7 @@ export const Card = ({item}) => {
           />
         </div>
         <div className="cardTitle">
-          <p>{item.name}</p>
+          <Link>{item.name}</Link>
         </div>
         <p className="cardPrice">From ${item.price} USD</p>
         <span className="onSale">{item.color}</span>

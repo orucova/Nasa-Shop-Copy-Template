@@ -4,16 +4,22 @@
   position: relative;
   z-index: 99;
   transition: ease-out all 0.3s;
+  background-color: transparent;
 
-  // background-color: transparent;
-  background-color: #212121;
-  // &:hover {
-  // }
+  &:hover {
+    background-color: #212121;
+  }
+
+  &.active {
+    background-color: #212121;
+  }
 
   .container {
     .row {
       justify-content: space-between;
-
+.mobilIcon{
+  display: none;
+}
       .logo {
         max-width: 250px;
         padding: 21px 0;
@@ -174,11 +180,12 @@
         justify-content: center;
         align-items: center;
         gap: 24px;
-        
         .icon {
+          cursor: pointer;
           color: #fff;
           font-size: 20px;
-          a{
+
+          a {
             color: #fff;
           }
         }
@@ -186,6 +193,92 @@
     }
   }
 }
-.noneHeader{
+
+
+@media(max-width:1200px) {
+  .header {
+    height: 70%;
+    background-color: #212121;
+    .container {
+      .row {
+        .mobilIcon {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+
+          .searchActive,
+          .bars {
+            color: #fff;
+            font-size: 20px;
+
+            a {
+              color: #fff;
+            }
+          }
+        }
+
+        .logo {
+          padding: 10px 0;
+        }
+
+        .navBar {
+          display: none;
+        }
+
+        .userArea {
+          .search {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media(max-width:800px){
+  .header {
+    .container {
+      padding: 0 20px;
+      .row {
+        .logo {
+          max-width: 170px;
+          padding: 10px 0;
+        }
+        .userArea {
+          gap: 14px;
+        }
+      }
+    }
+  }
+}
+@media(max-width:400px){
+  .header {
+    .container {
+      padding: 0 20px;
+      .row {
+        .mobilIcon {
+          gap: 10px;
+          .searchActive,
+          .bars {
+            font-size: 15px;
+          }
+        }
+        .logo {
+          max-width: 120px;
+          padding: 10px 0;
+        }
+        .userArea {
+          gap: 14px;
+          .icon {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.noneHeader {
   display: none;
 }

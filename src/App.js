@@ -14,13 +14,19 @@ import Footer from "./components/Footer";
 // Redux
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import { Shop } from "./pages/Shop";
+import { Errors } from "./pages/Errors";
+
+
 
 const App = () => {
-  return (
+  return (  
     <Provider store={store}>
       <Header />
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/shop" element={<Shop/>}/>
+<Route path="/errors" element={<Errors/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/create-account" element={<Register/>} />
         <Route path="/product-detail/:id" element={<ProductDetail/>} />

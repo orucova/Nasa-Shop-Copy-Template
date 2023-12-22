@@ -12,8 +12,12 @@
 @import "./components/tabs";
 @import"./components/cart";
 @import "./components/latestCard";
+@import "./components/mobilMenu";
+@import "./components/loading";
+
 //Pages
 @import "./pages/home";
 @import "./pages/login";
 @import "./pages/productDetail";
 @import "./pages/checkout";
+@import "./pages/shop";

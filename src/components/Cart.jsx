@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { RiShoppingBag2Line } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 
 import { MdDiscount } from "react-icons/md";
 import { TiMinus } from "react-icons/ti";
 import { FaPlus } from "react-icons/fa6";
-import { decrement, increment, removeFromCart,cartTotalPrice } from "../redux/slice/cartSlice";
+import { decrement, increment, removeFromCart } from "../redux/slice/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
 
 const Cart = ({ open, setOpen }) => {
-
+  const path = useLocation()
+  useEffect(() => {
+    setOpen(false);
+  }, [setOpen,path.pathname]);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cartData.cart);
  
-  const totalCount=cart.reduce((total,item)=>total+item.quantity,0)
 
  const totalPrice=cart.reduce((total,item)=>total+item.price*item.quantity,0)
 
@@ -99,7 +102,7 @@ const Cart = ({ open, setOpen }) => {
               </div></>  
           : <div className="cartEmpty">
               <p className="cartEmptyTitle">Your cart is empty</p>
-              <button className="cartBtn">Start Shopping</button>
+              <Link to="/shop" className="cartBtn">Start Shopping</Link>
             </div>
           }
 

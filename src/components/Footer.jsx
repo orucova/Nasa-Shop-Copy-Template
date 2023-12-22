@@ -1,16 +1,29 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 import { AiOutlineArrowRight} from 'react-icons/ai';
 import { BiLogoFacebook} from 'react-icons/bi';
 import { BiLogoTwitter} from 'react-icons/bi';
 import { BiLogoInstagram} from 'react-icons/bi';
 import { BiLogoYoutube} from 'react-icons/bi';
+import { useEffect, useState } from "react";
 
 
 
 const Footer = () => {
+  const [footer,setFooter]=useState("footer")
+const path=useLocation()
+
+useEffect(()=>{
+  if(path.pathname==="/checkout" || path.pathname==="/errors"){
+    setFooter("none")
+  }else{
+    setFooter("footer")
+  }
+},[path.pathname])
+
+
   return (
-    <footer className="footer">
+    <footer className={footer}>
       <div className="container">
         <div className="footerContent">
           <h2 className="footerContentFirst">Ships Anywhere in the galaxy</h2>

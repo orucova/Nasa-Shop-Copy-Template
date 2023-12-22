@@ -38,7 +38,7 @@ const ProductDetail = () => {
   return (
     <section className="product-detail">
       <div className="container">
-        <div className="row">
+        <div className="productDetails">
           <div className="productLeft">
             <img
               src={`http://localhost:4000/${product.productImage}`}

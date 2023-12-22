@@ -38,6 +38,7 @@
               display: flex;
               justify-content: space-between;
               margin: 10px 0;
+              align-items: center;
               .formTitle {
                 font-size: 24px;
                 font-family: system-ui, -apple-system, BlinkMacSystemFont,
@@ -57,7 +58,7 @@
             .inp {
               width: 100%;
               padding: 13px 11px;
-              color: #f3f3f3;
+              color: #212121;
               border: 2px solid #f5f5f5;
               border-radius: 4px;
               margin-bottom: 10px;
@@ -111,7 +112,7 @@
           width: 45%;
           padding: 42px;
           border-left: 2px solid #e1e1e1;
-          .row{
+          .productBay{
             .productImage{
               width: 91px;
               height: 91px;
@@ -161,4 +162,183 @@
       }
     }
   }
+}
+
+@media(max-width:764px){
+  .checkoutSection {
+    .checkoutHeader {
+      padding: 15px 0;
+      .container {
+        .row {
+          .logoSide {
+            width: 150px;
+            height: 70px;
+          }
+        }
+      }
+    }
+    .checkoutMain {
+      .container {
+        .row {
+          flex-direction: column;
+          .leftSide {
+            width: 100%;
+            padding: 42px;
+            .checkoutForm {
+              .contact {
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0;
+                .formTitle {
+                  font-size: 24px;
+                  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+                    "Helvetica Neue", sans-serif;
+                  font-weight: 500;
+                }
+                span {
+                  text-align: center;
+                  color: #c3b8a7;
+                  a{
+                      color: #f15b88;
+                      text-decoration: underline;
+                  }
+                }
+              }
+              .inp {
+                width: 100%;
+                padding: 13px 11px;
+                color: #f3f3f3;
+                border: 2px solid #f5f5f5;
+                border-radius: 4px;
+                margin-bottom: 10px;
+              }
+              .checkbox {
+                label {
+                  padding-left: 11px;
+                  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+                    "Helvetica Neue", sans-serif;
+                    font-size: 14px;
+                    color: #606060;
+                }
+              }
+              .formTitle{
+                font-size: 24px;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+                  "Helvetica Neue", sans-serif;
+                font-weight: 500;
+                margin-top: 20px;
+                margin-bottom: 10px;
+              }
+              .select{
+                select{
+                  width: 100%;
+                  padding: 13px 11px;
+                  color: #000;
+                  border: 2px solid #f5f5f5;
+                  border-radius: 4px;
+                  margin-bottom: 10px;
+                }
+              }
+              .fName{
+                width: 50%;
+              }
+              .btn{
+                width: 100%;
+                background-color: #282828;
+                border: 1px solid #282828;
+                border-radius: 4px;
+                padding: 14px;
+                color: #fff;
+                font-size: 16px;
+                font-weight: 600;
+                margin-top: 10px;
+              }
+            }
+          }
+          .rightSide{
+            width: 100%;
+            padding: 42px 0;
+            border-top: 2px solid #e1e1e1;
+            border-left: transparent;
+            .productBay{
+              width: 100%;
+              margin-bottom: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .productPrice{
+                padding-left: 14px;
+                display: flex;
+                height: 100%;
+                align-items: center;
+              }
+            }
+            .total{
+            margin-top: 15px;
+          }
+          }
+        }
+      }
+    }
+  }
+  
+}
+
+@media(max-width:464px){
+  .checkoutSection {
+    .checkoutHeader {
+      padding: 15px 0;
+      .container {
+        .row {
+          .logoSide {
+            width: 150px;
+            height: 70px;
+          }
+        }
+      }
+    }
+    .checkoutMain {
+      .container {
+      padding: 0 15px;
+        .row {
+          flex-direction: column;
+          .leftSide {
+            padding: 22px;
+            .checkoutForm {
+            display: flex;
+            flex-direction: column;
+              .fName{
+                width: 100%;
+              }
+            }
+          }
+          .rightSide{
+            .productBay{
+              width: 100%;
+              margin-bottom: 20px;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              .productImage{
+              margin-bottom: 15px;
+              }
+              .productPrice{
+                padding-left: 14px;
+                display: flex;
+                height: 100%;
+                align-items: center;
+              }
+            }
+            .total{
+            margin-top: 15px;
+          }
+          }
+        }
+      }
+    }
+  }
+  
 }

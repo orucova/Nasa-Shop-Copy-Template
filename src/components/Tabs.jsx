@@ -35,7 +35,9 @@ export const Tabs = () => {
           </div>
         </TabPanel>
         <TabPanel header="Artemis & Orion">
-          <p className="m-0">Artemis & Orion</p>
+        {products.map((item) => (
+                <Card key={item.id} item={item} />
+              ))}
         </TabPanel>
         <TabPanel header="Crew 7">
           <p className="m-0">Crew 7</p>

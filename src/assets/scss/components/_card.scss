@@ -16,8 +16,7 @@
             justify-content: center;
 
             .cardImage {
-                width: 480px;
-
+                width: 100%;
                 img {
                     width: 100%;
                     object-fit: cover;
@@ -25,7 +24,6 @@
             }
 
             .cardTitle {
-
                 font-size: 15px;
                 margin-bottom: 5px;
 
@@ -49,5 +47,21 @@
                 @include globalbtn()
             }
         }
+    }
+}
+
+@media(max-width:800px){
+    .card {
+        flex: 0 0 49%;
+        max-width: 49%;
+    }
+}
+
+@media(max-width:450px){
+
+    .card {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
     }
 }

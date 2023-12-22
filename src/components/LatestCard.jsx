@@ -17,7 +17,7 @@ const LatestCard = () => {
                     <p className="cardSubtitle">{item.subtitle}</p>
                     <h4 className="cardTitle">{item.title}</h4>
                     <div className="button">
-                    <button className="btn">{item.btn}</button>
+                    <Link className="btn">{item.btn}</Link>
                     </div>
                     </div>
                     </Link>

@@ -1,0 +1,49 @@
+.shop{
+    width: 100%;
+    .conainer{
+        .row{
+            justify-content: center;
+            flex-direction: column;
+            .titleShop{
+                margin-top: 50px;
+                text-align: center;
+                font-size: 30px;
+                color: #212121;
+                font-weight: 600;
+            }
+            .cardBoxs{
+            margin: 50px 0;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 40px;
+            }
+        }
+    }
+}
+
+@media(max-width:800px){
+    .shop{
+        width: 100%;
+        .conainer{
+            .row{
+                justify-content: center;
+                flex-direction: column;
+                .titleShop{
+                    margin-top: 50px;
+                    text-align: center;
+                    font-size: 30px;
+                    color: #212121;
+                    font-weight: 600;
+                }
+                .cardBoxs{
+                margin: 50px 0;
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0px;
+                }
+            }
+        }
+    }
+}
